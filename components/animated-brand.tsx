@@ -132,7 +132,7 @@ export function AnimatedBrand({ animationPhase, targetRef }: AnimatedBrandProps)
         }}
       >
         <motion.img
-          src="/logocobra.svg"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logocobra.svg`}
           alt="Cobra Terminal"
           className="w-full h-full object-contain"
           initial={{ scale: 0.5, opacity: 0 }}

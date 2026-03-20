@@ -37,7 +37,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/logocobra.svg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logocobra.svg`}
                 alt="Cobra Terminal"
                 className="w-8 h-8 object-contain rounded-md"
               />

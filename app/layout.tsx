@@ -19,18 +19,18 @@ export const metadata: Metadata = {
   description: 'Deploy. Trade. Boost. The ultimate Solana token SaaS platform with Jito bundles, volume tools, and sniper protection.',
   generator: 'v0.app',
   icons: {
-    icon: '/cobra-icon.png',
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/cobra-icon.png`,
   },
   openGraph: {
     title: 'Cobra Terminal | The Ultimate Pump.fun Toolkit',
     description: 'Deploy. Trade. Boost. The ultimate Solana token SaaS platform with Jito bundles, volume tools, and sniper protection.',
-    images: ['/cobra-banner.png'],
+    images: [`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/cobra-banner.png`],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cobra Terminal | The Ultimate Pump.fun Toolkit',
     description: 'Deploy. Trade. Boost. The ultimate Solana token SaaS platform with Jito bundles, volume tools, and sniper protection.',
-    images: ['/cobra-banner.png'],
+    images: [`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/cobra-banner.png`],
   },
 }
 
@@ -51,7 +51,7 @@ export default function RootLayout({
             __html: "html,body{background-color:#020202!important}",
           }}
         />
-        <link rel="preload" href="/logocobra.svg" as="image" />
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logocobra.svg`} as="image" />
       </head>
       <body className={`${manrope.variable} font-sans antialiased`} style={{ backgroundColor: "#020202" }}>
         <SmoothScroll>
