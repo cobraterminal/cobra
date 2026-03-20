@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cobra Banner 1500x500</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow: hidden; background: #020202; }
+    .banner {
+      width: 1500px;
+      height: 500px;
+      position: relative;
+      background: #020202;
+      overflow: hidden;
+    }
+    .hexagon-grid {
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      height: 560px;
+    }
+    .hexagon-row {
+      display: flex;
+      margin-bottom: -14px;
+    }
+    .hexagon-row:nth-child(even) { margin-left: 40.5px; }
+    .hexagon {
+      width: 75px;
+      height: 82.5px;
+      margin-right: 3px;
+      position: relative;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: #020202;
+    }
+    .hexagon::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      background: #0a0a0a;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      white-space: nowrap;
+      font-family: 'Manrope', system-ui, sans-serif;
+    }
+    .text-overlay span { font-size: 72px; font-weight: 700; letter-spacing: -0.02em; }
+    .text-white { color: #f0f0f0; }
+    .text-primary { color: #00ff88; }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="hexagon-grid" id="grid"></div>
+    <div class="text-overlay">
+      <span class="text-white">Deploy. Trade. </span><span class="text-primary">Boost.</span>
+    </div>
+  </div>
+  <script>
+    const rowSpacing = 60, width = 1500, height = 500;
+    const rows = Math.ceil(height / rowSpacing) + 3;
+    const cols = Math.ceil(width / 75) + 3;
+    const grid = document.getElementById('grid');
+    for (let r = 0; r < rows; r++) {
+      const row = document.createElement('div');
+      row.className = 'hexagon-row';
+      row.style.marginTop = r === 0 ? '-26px' : '0';
+      for (let c = 0; c < cols; c++) {
+        row.appendChild(document.createElement('div')).className = 'hexagon';
+      }
+      grid.appendChild(row);
+    }
+  </script>
+</body>
+</html>
