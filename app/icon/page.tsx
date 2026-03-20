@@ -21,7 +21,7 @@ export default function IconPage() {
       />
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <img
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logocobra.svg`}
+          src="/logocobra.svg"
           alt="Cobra Terminal"
           className="w-[400px] h-[400px] object-contain"
         />
