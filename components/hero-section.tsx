@@ -9,8 +9,8 @@ interface HeroSectionProps {
 
 export function HeroSection({ animationPhase }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-6">
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen flex items-center justify-center px-6">
+      <div className="relative z-10 max-w-4xl mx-auto text-center -translate-y-[77px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ 
@@ -63,18 +63,18 @@ export function HeroSection({ animationPhase }: HeroSectionProps) {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="group min-w-[220px] px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg tracking-wide transition-all duration-300 flex items-center justify-center gap-2 border border-primary/40 hover:border-primary/60"
+            className="group min-w-[200px] px-6 py-3 bg-primary text-primary-foreground font-semibold text-base tracking-wide transition-all duration-300 flex items-center justify-center gap-2 border border-primary/40 hover:border-primary/60"
           >
             Start Building
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="min-w-[220px] px-8 py-4 bg-white/[0.02] backdrop-blur-sm font-semibold text-lg tracking-wide border border-white/[0.08] text-foreground hover:bg-white/[0.06] hover:border-primary/40 hover:text-primary transition-all duration-300 flex items-center justify-center gap-2"
+            className="min-w-[200px] px-6 py-3 bg-white/[0.02] backdrop-blur-sm font-semibold text-base tracking-wide border border-white/[0.08] text-foreground hover:bg-white/[0.06] hover:border-primary/40 hover:text-primary transition-all duration-300 flex items-center justify-center gap-2"
           >
-            <BookOpen className="w-5 h-5" />
+            <BookOpen className="w-4 h-4" />
             View Docs
           </motion.button>
         </motion.div>
